@@ -2,6 +2,7 @@
 import { Dashboard } from './src/screens/Dashboard';
 import {ThemeProvider} from 'styled-components';
 import AppLoading from 'expo-app-loading';
+import { SafeAreaView } from 'react-native';
 
 import { 
  useFonts,
@@ -25,8 +26,8 @@ export default function App() {
 
   
   return(
-  <ThemeProvider theme={theme}>
-   <Dashboard />
+   <ThemeProvider theme={theme}>
+     <Dashboard />      
    </ThemeProvider>
   )
 }
