@@ -1,7 +1,10 @@
-import styled  from "styled-components/native";
+import styled,{css}  from "styled-components/native";
 import { Feather } from '@expo/vector-icons';
 import { RFValue } from "react-native-responsive-fontsize";
 
+interface IconProps{
+  type: 'up' | 'down' | 'total'
+}
 
 export const Container = styled.View`
   background-color: ${({theme}) => theme.colors.shape};
@@ -40,6 +43,14 @@ export const LastTransition = styled.Text`
    color: ${({theme}) => theme.colors.text};
 `;
 
-export const Icon  = styled(Feather)`
+export const Icon  = styled(Feather)<IconProps>`
     font-size: ${RFValue(40)}px;
+    ${(props) =>props.type === 'up'  && css`
+      color: ${({theme}) => theme.colors.success}
+    `}
+    
+    ${(props) =>props.type === 'down' && css`
+       color: ${({theme}) => theme.colors.attention}`}
+    
+          color: ${({theme}) => theme.colors.success}
 `;
