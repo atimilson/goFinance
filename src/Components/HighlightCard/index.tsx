@@ -26,15 +26,15 @@ import {
 
 export function HighlightCard({ type, title, amount, lastTransition}: Props) {
     return (
-        <Container>
+        <Container type={type}>
             <Header>
-                <Title>{title}</Title>
+                <Title type={type}>{title}</Title>
                 <Icon name={icons[type]} type={type}/>
 
             </Header>
             <Footer>
-                <Amount>{amount}</Amount>
-                <LastTransition>{lastTransition}</LastTransition>
+                <Amount type={type}>{amount}</Amount>
+                <LastTransition type={type}>{lastTransition}</LastTransition>
             </Footer>
         </Container>
     )
